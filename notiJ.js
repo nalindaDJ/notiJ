@@ -10,7 +10,7 @@
 				'speed': 'fast',
 				'multiple': true,
 				'autoclose': 5000,
-				'onfocusdelay': false   
+				'onfocusdelay': true   
 			};
 			//adding DOM html to msg if dom specified.
 			if(!msg){msg=this.html();}
@@ -35,7 +35,7 @@
 			});
 
 			//adding main layout
-			if(!$('body').find('.notij-que').html()){
+			if($('.notij-que').length==0){
 				$('body').append('<div class="notij-que"></div>');
 			}
 
@@ -53,12 +53,31 @@
 
 			$('.notij').ready(function(){
 				if(settings['autoclose']){
-					$('#'+uniquid).delay(settings['autoclose']).fadeOut(settings['speed']);
+					$('#'+uniquid).delay(settings['autoclose']).fadeOut(settings['speed'],function(){
+						$('#'+uniquid).remove();
+					});
 				}
 			});
 
+			$('.notij').mouseover(function(){
+				if(settings['onfocusdelay']){
+					$('#' + $(this).attr('id')).dequeue().stop().show();
+				}
+			});
+			
+			$('.notij').mouseout(function(){
+				if(settings['autoclose']){
+					$('#' + $(this).attr('id')).delay(settings['autoclose']).fadeOut(settings['speed'],function(){
+						$('#' + $(this).attr('id')).remove();
+					});
+				}
+			});
+
+
+
 			$('.notij-close').click(function(){
 				$('#' + $(this).attr('rel')).dequeue().fadeOut(settings['speed']);
+				$('#' + $(this).attr('rel')).remove();
 			});
 
 			var result={

@@ -1,0 +1,25 @@
+{
+    "name"        : "notiJ",
+    "version"     : "0.2",
+    "title"       : "notiJ - a jquery notification plugin",
+    "description" : "notiJ is a jQuery plugin that makes it easy to create error - information messages. Each notification is added to a queue. (Optional)",
+    "keywords"    : ["notij", "notification", "plugin", "jquery", "javascript", "alert", "error", "warning", "information", "confirmation", "facebook"],
+    "homepage"    : "https://github.com/nalindaDJ/notiJ",
+    "docs"        : "https://github.com/nalindaDJ/notiJ",
+    "demo"        : "https://github.com/nalindaDJ/notiJ",
+    "bugs"        : "https://github.com/nalindaDJ/notiJ/issues",
+    "download"    : "https://github.com/nalindaDJ/notiJ/archive/master.zip",
+    "author"      : {
+        "name": "Nalinda Jayasinghe",
+        "url" : "https://github.com/nalindaDJ"
+    },
+    "licenses"    : [
+        {
+            "type": "MIT",
+            "url" : "hhttp://opensource.org/licenses/MIT"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.4"
+    }
+}

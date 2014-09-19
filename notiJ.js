@@ -1,4 +1,5 @@
-//NotiJ v0.1 by Nalinda Jayasinghe
+//NotiJ v1.0.0 by Nalinda Jayasinghe
+//URL : https://github.com/nalindaDJ/notiJ
 
 (function( $ )
 	{	
@@ -10,7 +11,7 @@
 				'speed': 'fast', // fast, slow, or number eg: 100
 				'multiple': true,
 				'autoclose': 5000, //set timeout speed
-				'onfocusdelay': true,
+				'onfocusdelay': true, //keep dialog open 
 				'type' : 'default' // blank means default, other types error,info,    
 			};
 			//adding DOM html to msg if dom specified.
@@ -60,7 +61,7 @@
 				}
 			});
 
-
+			//activating onfocus delay
 			$('.notij').mouseover(function(){
 				if(settings['onfocusdelay']){
 					$('#' + $(this).attr('id')).dequeue().stop().show();

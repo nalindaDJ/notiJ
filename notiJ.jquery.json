@@ -1,6 +1,6 @@
 {
     "name"        : "notiJ",
-    "version"     : "0.2",
+    "version"     : "1.0.0",
     "title"       : "notiJ - a jquery notification plugin",
     "description" : "notiJ is a jQuery plugin that makes it easy to create error - information messages. Each notification is added to a queue. (Optional)",
     "keywords"    : ["notij", "notification", "plugin", "jquery", "javascript", "alert", "error", "warning", "information", "confirmation", "facebook"],

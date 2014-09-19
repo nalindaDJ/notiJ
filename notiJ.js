@@ -7,10 +7,11 @@
 		$.fn.notij = function(msg, options, callback){
 
 			var settings={
-				'speed': 'fast',
+				'speed': 'fast', // fast, slow, or number eg: 100
 				'multiple': true,
-				'autoclose': 5000,
-				'onfocusdelay': true   
+				'autoclose': 5000, //set timeout speed
+				'onfocusdelay': true,
+				'type' : 'default' // blank means default, other types error,info,    
 			};
 			//adding DOM html to msg if dom specified.
 			if(!msg){msg=this.html();}
@@ -40,8 +41,8 @@
 			}
 
 			if(display){
-				$('.notij-que').prepend('<div class="notij" id="' + uniquid + '"></div>');
-				$('#' + uniquid).append('<span class="notij-close" rel="' + uniquid + '">x</span>');
+				$('.notij-que').prepend('<div class="notij theme_' + settings['type'] + '" id="' + uniquid + '"></div>');
+				$('#' + uniquid).append('<span class="notij-close close_' + settings['type'] + '" rel="' + uniquid + '">x</span>');
 				$('#' + uniquid).append('<div class="notij-msg" rel="' + uniquid + '">' + msg + '</div>');
 
 				var height=$('#'+uniquid).height();
@@ -59,6 +60,7 @@
 				}
 			});
 
+
 			$('.notij').mouseover(function(){
 				if(settings['onfocusdelay']){
 					$('#' + $(this).attr('id')).dequeue().stop().show();
@@ -72,8 +74,6 @@
 					});
 				}
 			});
-
-
 
 			$('.notij-close').click(function(){
 				$('#' + $(this).attr('rel')).dequeue().fadeOut(settings['speed']);

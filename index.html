@@ -7,11 +7,16 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#btn_clk').click(function(){
-		$.notij('Hello there, hope this will help you.');
+		$.notij('Hello there, hope this will help you.',{'type':'error'});
 	});
 
 	$('#btn_clk1').click(function(){
-		$.notij('Ayubowan, Sri Lanka');
+		$.notij('Ayubowan, Sri Lanka',{'type':'info'});
+
+	});
+
+	$('#btn_clk2').click(function(){
+		$('p').notij();
 
 	});
 });
@@ -22,6 +27,10 @@ $(document).ready(function(){
 <body>
 <button id="btn_clk1">Ayubowan</button>
 <button id="btn_clk">Click Me!</button>
+<button id="btn_clk2">Show Paragraph</button>
+<br />
+<br />
+<p>My name is Nalinda</p>
 
 </body>
 </html>

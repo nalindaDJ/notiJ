@@ -16,7 +16,6 @@ div.notij {
 	padding:10px;
 	position:relative;
 	margin-bottom:5px;
-	background:#414141;
 	/*adding border radius*/
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -38,6 +37,29 @@ div.notij-msg{
 	width:14px;
 	cursor:pointer;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	color:#999;
 	font-weight:800;
+}
+
+.theme_default {
+	background:#414141;
+}
+
+.close_default {
+	color:#999;
+}
+
+.theme_error {
+	background:#FF3333;
+}
+
+.close_error {
+	color:#FFEDFD;
+}
+
+.theme_info {
+	background:#0099FF;
+}
+
+.close_info {
+	color:#33CCFF;
 }

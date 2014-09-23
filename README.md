@@ -17,7 +17,7 @@ $('#btn').click(function(){
 });
 ```
 
-$('p').notij();
+Use element as notifier
 
 &lt;p&gt; Ayubowan Sri Lanka &lt;/p&gt;
 
@@ -28,19 +28,30 @@ $('#btn').click(function(){
 ```
 
 ## Default Options
-
-speed           : 'fast',       ( fast, slow, or number eg: 100 )
+```js
+speed           : 'fast',       // fast, slow, or number eg: 100
 multiple        : true,
-autoclose       : 5000,         ( set timeout speed )
-onfocusdelay    : true,         ( keep dialog open on mouseover )
-type            : 'default'     ( blank means default, other types error,info )
+autoclose       : 5000,         // set timeout speed
+onfocusdelay    : true,         // keep dialog open on mouseover
+theme           : 'default'     // Theme default, error, info
+```
 
 ## CSS
 
-Working with NotiJ CSS is simple: just change the css file attached as per your requirement. There are 3 color themes have been attached to css.
+Working with NotiJ CSS is simple: just change the css file attached as per your requirement. There are three color themes have been attached to css and you can add many more.
 
 * `default` basic color theme.
 * `error` can be use to prompt errors or special notifications.
 * `info` colored with #33CCFF to show information.
+
+```css
+.theme_default {
+    background:#414141;
+}
+
+.close_default {
+    color:#999;
+}
+```
 
 

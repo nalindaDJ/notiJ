@@ -12,7 +12,7 @@
 				'multiple': true,
 				'autoclose': 5000, //set timeout speed
 				'onfocusdelay': true, //keep dialog open 
-				'type' : 'default' // blank means default, other types error,info,    
+				'theme' : 'default' // default, error,info,    
 			};
 			//adding DOM html to msg if dom specified.
 			if(!msg){msg=this.html();}
@@ -20,13 +20,13 @@
 			if(options){ $.extend(settings,options);}
 
 			var display=true;
-			var multiple="no";
+			var isMultiple="no";
 
 			var uniquid=Math.floor(Math.random()*99999);
 
 			$('.notij-msg').each(function(){
 				if($(this).html()==msg && $(this).is(':visible')){
-					multiple="yes";
+					isMultiple="yes";
 					if(!settings['multiple']){
 						display = false;
 					}
@@ -42,8 +42,8 @@
 			}
 
 			if(display){
-				$('.notij-que').prepend('<div class="notij theme_' + settings['type'] + '" id="' + uniquid + '"></div>');
-				$('#' + uniquid).append('<span class="notij-close close_' + settings['type'] + '" rel="' + uniquid + '">x</span>');
+				$('.notij-que').prepend('<div class="notij theme_' + settings['theme'] + '" id="' + uniquid + '"></div>');
+				$('#' + uniquid).append('<span class="notij-close close_' + settings['theme'] + '" rel="' + uniquid + '">x</span>');
 				$('#' + uniquid).append('<div class="notij-msg" rel="' + uniquid + '">' + msg + '</div>');
 
 				var height=$('#'+uniquid).height();

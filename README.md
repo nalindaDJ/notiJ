@@ -1,30 +1,39 @@
-# notiJ
-#### A jQuery Notification Plugin
+# notiJ - A jQuery Notification Plugin
 
-Is a simple notification plugin which can be plug and play with any jQuery based applications. This is specially designed for simple needs.
+notiJ is a small jQuery plugin to create animated and customizable notification which can be use with any jQuery based applications.
 
-There are some more options will be added on future updates.  
+The plugin comes with 3 built-in notification themes for your practical needs: default, error and information.
 
 ## Documentation
 
-#### Basic usage
+#### How to use it
+
+1. Load the jQuery library and the jQuery notiJ plugin on the web page.
 
 ```js
-$.notij('hello there, hope this will help you.');
-
-$('#btn').click(function(){
-    $.notij('Ayubowan, Sri Lanka',{'type':'info'});
-});
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="notiJ.js"></script>
 ```
 
-Use element as notifier
+2. Create your custom notification messages in the Javascript.
+
+```js
+
+$.notij('Your Message Here.',OPTIONS);
+
+$('#btn').click(function(){
+    $.notij('Ayubowan, Sri Lanka',{'theme':'info'});
+});
+
+```
+3. Or load messages from a specific element. (Use elements as notifiers)
 
 &lt;p&gt; Ayubowan Sri Lanka &lt;/p&gt;
 
 ```js
-$('#btn').click(function(){
-    $('p').notij();
-});
+
+$('p').notij(OPTIONS);
+
 ```
 
 ## Default Options
@@ -38,7 +47,7 @@ theme           : 'default'     // Theme default, error, info
 
 ## CSS
 
-Working with NotiJ CSS is simple: just change the css file attached as per your requirement. There are three color themes have been attached to css and you can add many more.
+Include the notiJ.css directly in the head section of your web page. Tweak or override the styles to change the color or position of the notification boxes to fit your needs.
 
 * `default` basic color theme.
 * `error` can be use to prompt errors or special notifications.
@@ -53,5 +62,13 @@ Working with NotiJ CSS is simple: just change the css file attached as per your 
     color:#999;
 }
 ```
+
+## Demo
+
+Find [notij-demo] here.
+
+[notij-demo]:http://lankaweb.solutions/notiJ/index.html
+
+
 
 

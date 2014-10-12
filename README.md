@@ -8,7 +8,7 @@ The plugin comes with 3 built-in notification themes for your practical needs: d
 
 #### How to use it
 
-1. Load the jQuery library and the jQuery notiJ plugin on the web page.
+Load the jQuery library and the jQuery notiJ plugin on the web page.
 
 ```js
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>

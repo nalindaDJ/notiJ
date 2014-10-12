@@ -83,7 +83,7 @@
 
 			var result={
 				"id": uniquid,
-				"multiple": multiple  
+				"theme" : settings['theme']
 			};
 			
 			if(callback){

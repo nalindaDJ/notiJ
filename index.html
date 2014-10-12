@@ -19,6 +19,13 @@ $(document).ready(function(){
 		$('p').notij();
 
 	});
+
+	$('#btn_clk3').click(function(){
+		$.notij('Welcome to Sri Lanka',{'theme':'info'},function(data){
+			console.log(data);
+		});
+
+	});
 });
 </script>
 <head>
@@ -28,6 +35,7 @@ $(document).ready(function(){
 <button id="btn_clk1">Ayubowan</button>
 <button id="btn_clk">Click Me!</button>
 <button id="btn_clk2">Show Paragraph</button>
+<button id="btn_clk3">Callback</button>
 <br />
 <br />
 <p>My name is Nalinda</p>

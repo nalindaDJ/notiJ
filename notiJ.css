@@ -2,7 +2,10 @@ div.notij-que {
 	position: fixed;
 	width: 200px;
 	left:10px;
-	bottom:10px;
+	bottom:30px;
+}
+div.notij-long {
+	width: 500px !important;
 }
 
 div.notij-que * {
@@ -49,7 +52,7 @@ div.notij-msg{
 }
 
 .theme_error {
-	background:#FF3333;
+	background:#C11B17;
 }
 
 .close_error {
@@ -57,9 +60,17 @@ div.notij-msg{
 }
 
 .theme_info {
-	background:#0099FF;
+	background:#4863A0;
 }
 
 .close_info {
 	color:#33CCFF;
+}
+
+.theme_succuess {
+	background:#3C9300;
+}
+
+.close_succuess {
+	color:#00FF66;
 }

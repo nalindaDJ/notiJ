@@ -11,8 +11,10 @@
 				'speed': 'fast', // fast, slow, or number eg: 100
 				'multiple': true,
 				'autoclose': 5000, //set timeout speed
-				'onfocusdelay': true, //keep dialog open 
-				'theme' : 'default' // default, error,info,    
+				'onfocusdelay': true, //keep dialog open
+				'onclose': null, // onclose event
+				'theme' : 'default', // default, error,info
+				'msgstyle': null
 			};
 			//adding DOM html to msg if dom specified.
 			if(!msg){msg=this.html();}
@@ -38,7 +40,7 @@
 
 			//adding main layout
 			if($('.notij-que').length==0){
-				$('body').append('<div class="notij-que"></div>');
+				$('body').append('<div class="notij-que '+settings.msgstyle+'"></div>');
 			}
 
 			if(display){
@@ -57,6 +59,7 @@
 				if(settings['autoclose']){
 					$('#'+uniquid).delay(settings['autoclose']).fadeOut(settings['speed'],function(){
 						$('#'+uniquid).remove();
+						closeAction();
 					});
 				}
 			});
@@ -72,6 +75,7 @@
 				if(settings['autoclose']){
 					$('#' + $(this).attr('id')).delay(settings['autoclose']).fadeOut(settings['speed'],function(){
 						$('#' + $(this).attr('id')).remove();
+						closeAction();
 					});
 				}
 			});
@@ -79,6 +83,7 @@
 			$('.notij-close').click(function(){
 				$('#' + $(this).attr('rel')).dequeue().fadeOut(settings['speed']);
 				$('#' + $(this).attr('rel')).remove();
+				closeAction();
 			});
 
 			var result={
@@ -92,6 +97,14 @@
 				return(result);
 			}
 
-		}
+			function closeAction(){
+				if($.isFunction(settings.onclose)){
+					return settings.onclose.call(this);
+				}
+			}
+
+		};
+
+
 
 })( jQuery );
